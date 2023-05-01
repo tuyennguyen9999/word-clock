@@ -1,5 +1,17 @@
 function updateTime() {
   // Los Angeles
+  let hoChiMinhElement = document.querySelector("#ho-chi-minh");
+  if (hoChiMinhElement) {
+    let hoChiMinhDateElement = hoChiMinhElement.querySelector(".date");
+    let hoChiMinhTimeElement = hoChiMinhElement.querySelector(".time");
+    let hoChiMinhTime = moment().tz("Asia/Ho_Chi_Minh");
+
+    hoChiMinhDateElement.innerHTML = hoChiMinhTime.format("MMMM	Do YYYY");
+    hoChiMinhTimeElement.innerHTML = hoChiMinhTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+  // Los Angeles
   let losAngelesElement = document.querySelector("#los-angeles");
   if (losAngelesElement) {
     let losAngelesDateElement = losAngelesElement.querySelector(".date");
@@ -13,14 +25,14 @@ function updateTime() {
   }
 
   // Paris
-  let parisElement = document.querySelector("#paris");
-  if (parisElement) {
-    let parisDateElement = parisElement.querySelector(".date");
-    let parisTimeElement = parisElement.querySelector(".time");
-    let parisTime = moment().tz("Europe/Paris");
+  let italyElement = document.querySelector("#italy");
+  if (italyElement) {
+    let italyDateElement = italyElement.querySelector(".date");
+    let italyTimeElement = italyElement.querySelector(".time");
+    let italyTime = moment().tz("Europe/Italy");
 
-    parisDateElement.innerHTML = parisTime.format("MMMM	Do YYYY");
-    parisTimeElement.innerHTML = parisTime.format(
+    italyDateElement.innerHTML = italyTime.format("MMMM	Do YYYY");
+    italyTimeElement.innerHTML = italyTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
